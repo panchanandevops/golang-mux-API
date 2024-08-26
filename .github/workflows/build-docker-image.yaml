@@ -38,7 +38,7 @@ jobs:
           tags: |
             type=semver,pattern={{version}}
 
-      - name: Build and push User API Docker image
+      - name: Build and push go mux API Docker image
         uses: docker/build-push-action@v6
         with:
           context: ./backend 
