@@ -1,4 +1,4 @@
-name: Build and Push User API Docker Image
+name: Build and Push go mux API Docker Image
 
 permissions:
   security-events: write
