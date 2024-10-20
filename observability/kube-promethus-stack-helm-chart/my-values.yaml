@@ -1,0 +1,74 @@
+# Configuration for Alertmanager
+alertmanager:
+  ingress:
+    enabled: true # Enable Prometheus Ingress
+    ingressClassName: nginx
+    hosts:
+      - alertmanager-ui.com
+    paths:
+      - /
+  config:
+    global:
+      resolve_timeout: 5m
+    route:
+      group_by: ["alertname", "job"] # Group alerts by alert name and job
+      group_wait: 30s # Wait 30 seconds before sending the first notification
+      group_interval: 5m # Send a notification every 5 minutes for ongoing alerts
+      repeat_interval: 3h # Repeat notifications every 3 hours for unresolved alerts
+      receiver: slack_notifications # Specify the receiver for notifications
+    receivers:
+      - name: slack_notifications
+        slack_configs:
+          - api_url: "https://hooks.slack.com/services/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" # Add your Slack webhook URL
+            channel: "#alerts" # Slack channel to send notifications
+            send_resolved: true # Send notification when the alert is resolved
+            title: "{{ .CommonAnnotations.summary }}" # Use common annotation for the title
+            text: "{{ .CommonAnnotations.description }}" # Use common annotation for the text
+            resolved_title: "Resolved: {{ .CommonAnnotations.summary }}" # Title for resolved notification
+            resolved_text: "Resolved: {{ .CommonAnnotations.description }}" # Text for resolved notification
+
+# Configuration for Prometheus
+prometheus:
+  enabled: true
+  prometheusRuleSelector:
+    matchLabels:
+      role: alert-rules # This label is used to select Prometheus rules for alerting
+  additionalPrometheusRulesMap:
+    groups:
+      - name: custom-rules # Name of the rule group
+        rules:
+          - alert: LowRequestRate # Name of the alert
+            expr: round(sum(irate(nginx_ingress_controller_requests{ingress=~"$ingress"}[1m])) by (ingress), 0.001) < 10 # Alert when request rate is below 10 req/s
+            for: 5m # Wait 5 minutes before firing the alert
+            labels:
+              severity: critical # Severity level of the alert
+              role: alert-rules # Label to match the selector
+            annotations:
+              summary: "Request rate is low" # Short summary of the alert
+              description: "The request rate for the Nginx ingress has fallen below 10 requests per second for over 5 minutes." # Detailed description of the alert
+  ingress:
+    enabled: true # Enable Prometheus Ingress
+    ingressClassName: nginx
+    hosts:
+      - prometheus-ui.com
+    paths:
+      - /
+  prometheusSpec:
+    serviceMonitorSelector:
+      matchLabels:
+        role: monitoring # Ensure this matches the ServiceMonitors in your setup
+
+# Configuration for Grafana
+grafana:
+  enabled: true
+  ingress:
+    enabled: true # Enable Grafana Ingress
+    ingressClassName: nginx
+    hosts:
+      - monitoring.com
+  additionalDataSources:
+    - name: Loki
+      type: loki
+      access: proxy
+      url: http://my-loki.monitoring.svc.cluster.local:3100
+      version: 1

@@ -1,0 +1,22 @@
+controller:
+  service:
+    type: LoadBalancer # Change to LoadBalancer
+    annotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "10254"
+      prometheus.io/path: "/metrics"
+
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+      additionalLabels:
+        role: monitoring # Label for Prometheus ServiceMonitor
+
+  resources:
+    limits:
+      cpu: 600m # 2 vCPUs
+      memory: 600Mi # 1 GiB of memory
+    requests:
+      cpu: 300m # 1 vCPU for requests
+      memory: 300Mi # 512 MiB for requests

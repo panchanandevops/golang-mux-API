@@ -7,13 +7,6 @@ spec:
     storage: 1Gi
   accessModes:
     - ReadWriteOnce
-  local:
+  hostPath:
     path: /storage/db/go
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - minikube
+    type: DirectoryOrCreate

@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: panchanandevops.com
+    - host: go-api.com
       http:
         paths:
           - path: /
