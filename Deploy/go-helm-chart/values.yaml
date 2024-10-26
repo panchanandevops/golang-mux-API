@@ -31,7 +31,7 @@ ingress:
   enabled: true
   name: go-api-ingress
   className: nginx
-  host: panchanandevops.com
+  host: go-api.com
 
 secret:
   name: my-secret
@@ -59,8 +59,9 @@ dbService:
 pv:
   name: psql-pv-go
   storage: 1Gi
-  local:
+  hostPath:
     path: /storage/db/go
+    type: DirectoryOrCreate
 
 pvc:
   name: psql-pvc-go

@@ -7,13 +7,6 @@ spec:
     storage: {{ .Values.pv.storage }}
   accessModes:
     - ReadWriteOnce
-  local:
-    path: {{ .Values.pv.local.path }}
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - minikube
+  hostPath:
+    path: {{ .Values.pv.hostPath.path }}
+    type: {{ .Values.pv.hostPath.type }}
