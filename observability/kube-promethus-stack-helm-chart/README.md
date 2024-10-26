@@ -52,10 +52,7 @@ grafana:
       - grafana.example.com
     paths:
       - /
-    tls:
-      - secretName: grafana-tls
-        hosts:
-          - grafana.example.com
+
 ```
 
 Make sure to replace `grafana.example.com` with your domain name, and ensure your Ingress controller is correctly set up to handle the traffic.
