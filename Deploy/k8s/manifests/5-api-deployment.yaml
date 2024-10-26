@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: go-api
-          image: panchanandevops/golang-mux-app:2.0.1
+          image: panchanandevops/golang-mux-app:2.0.6
           ports:
             - containerPort: 8000
           resources:
