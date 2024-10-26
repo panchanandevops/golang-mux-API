@@ -1,6 +1,6 @@
 {
   "version": "2.1.0",
-  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
   "runs": [
     {
       "tool": {
@@ -8,11 +8,175 @@
           "fullName": "Trivy Vulnerability Scanner",
           "informationUri": "https://github.com/aquasecurity/trivy",
           "name": "Trivy",
-          "rules": [],
-          "version": "0.53.0"
+          "rules": [
+            {
+              "id": "CVE-2024-34156",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "encoding/gob: golang: Calling Decoder.Decode on a message which contains deeply nested structures can cause a panic due to stack exhaustion"
+              },
+              "fullDescription": {
+                "text": "Calling Decoder.Decode on a message which contains deeply nested structures can cause a panic due to stack exhaustion. This is a follow-up to CVE-2022-30635."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-34156",
+              "help": {
+                "text": "Vulnerability CVE-2024-34156\nSeverity: HIGH\nPackage: stdlib\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34156](https://avd.aquasec.com/nvd/cve-2024-34156)\nCalling Decoder.Decode on a message which contains deeply nested structures can cause a panic due to stack exhaustion. This is a follow-up to CVE-2022-30635.",
+                "markdown": "**Vulnerability CVE-2024-34156**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|stdlib|1.22.7, 1.23.1|[CVE-2024-34156](https://avd.aquasec.com/nvd/cve-2024-34156)|\n\nCalling Decoder.Decode on a message which contains deeply nested structures can cause a panic due to stack exhaustion. This is a follow-up to CVE-2022-30635."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-34155",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "go/parser: golang: Calling any of the Parse functions containing deeply nested literals can cause a panic/stack exhaustion"
+              },
+              "fullDescription": {
+                "text": "Calling any of the Parse functions on Go source code which contains deeply nested literals can cause a panic due to stack exhaustion."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-34155",
+              "help": {
+                "text": "Vulnerability CVE-2024-34155\nSeverity: MEDIUM\nPackage: stdlib\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34155](https://avd.aquasec.com/nvd/cve-2024-34155)\nCalling any of the Parse functions on Go source code which contains deeply nested literals can cause a panic due to stack exhaustion.",
+                "markdown": "**Vulnerability CVE-2024-34155**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|stdlib|1.22.7, 1.23.1|[CVE-2024-34155](https://avd.aquasec.com/nvd/cve-2024-34155)|\n\nCalling any of the Parse functions on Go source code which contains deeply nested literals can cause a panic due to stack exhaustion."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-34158",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "go/build/constraint: golang: Calling Parse on a \u0026#34;// +build\u0026#34; build tag line with deeply nested expressions can cause a panic due to stack exhaustion"
+              },
+              "fullDescription": {
+                "text": "Calling Parse on a \u0026#34;// +build\u0026#34; build tag line with deeply nested expressions can cause a panic due to stack exhaustion."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-34158",
+              "help": {
+                "text": "Vulnerability CVE-2024-34158\nSeverity: MEDIUM\nPackage: stdlib\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34158](https://avd.aquasec.com/nvd/cve-2024-34158)\nCalling Parse on a \"// +build\" build tag line with deeply nested expressions can cause a panic due to stack exhaustion.",
+                "markdown": "**Vulnerability CVE-2024-34158**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|stdlib|1.22.7, 1.23.1|[CVE-2024-34158](https://avd.aquasec.com/nvd/cve-2024-34158)|\n\nCalling Parse on a \"// +build\" build tag line with deeply nested expressions can cause a panic due to stack exhaustion."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            }
+          ],
+          "version": "0.56.1"
         }
       },
-      "results": [],
+      "results": [
+        {
+          "ruleId": "CVE-2024-34156",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "Package: stdlib\nInstalled Version: 1.22.5\nVulnerability CVE-2024-34156\nSeverity: HIGH\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34156](https://avd.aquasec.com/nvd/cve-2024-34156)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "api-golang",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "api-golang: stdlib@1.22.5"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-34155",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Package: stdlib\nInstalled Version: 1.22.5\nVulnerability CVE-2024-34155\nSeverity: MEDIUM\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34155](https://avd.aquasec.com/nvd/cve-2024-34155)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "api-golang",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "api-golang: stdlib@1.22.5"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-34158",
+          "ruleIndex": 2,
+          "level": "warning",
+          "message": {
+            "text": "Package: stdlib\nInstalled Version: 1.22.5\nVulnerability CVE-2024-34158\nSeverity: MEDIUM\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34158](https://avd.aquasec.com/nvd/cve-2024-34158)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "api-golang",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "api-golang: stdlib@1.22.5"
+              }
+            }
+          ]
+        }
+      ],
       "columnKind": "utf16CodeUnits",
       "originalUriBaseIds": {
         "ROOTPATH": {
@@ -20,13 +184,13 @@
         }
       },
       "properties": {
-        "imageID": "sha256:71f575daeb0675f60e5371d82bba343f01e846eedd1af9394482e103e5b1475c",
-        "imageName": "panchanandevops/golang-mux-app:2.0.1",
+        "imageID": "sha256:134333e00d1b04481cf6cde7b344b8a213d8bac710169da2ffdaf155028a2637",
+        "imageName": "panchanandevops/golang-mux-app:2.0.6",
         "repoDigests": [
-          "panchanandevops/golang-mux-app@sha256:c46252fdb413f455beb46b7fad96555e89c3d698071ab36741ad3d92db059c4b"
+          "panchanandevops/golang-mux-app@sha256:595a5afd78be17eb26608bba9d11219ea59194827a3d3c4b38d9080c18b7c955"
         ],
         "repoTags": [
-          "panchanandevops/golang-mux-app:2.0.1"
+          "panchanandevops/golang-mux-app:2.0.6"
         ]
       }
     }
