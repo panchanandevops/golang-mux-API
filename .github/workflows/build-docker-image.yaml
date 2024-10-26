@@ -41,7 +41,7 @@ jobs:
       - name: Build and push go mux API Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./backend 
+          context: ./backend
           file: ./backend/go.dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
@@ -80,13 +80,13 @@ jobs:
 
       - name: Update deployment image in YAML
         run: |
-          sed -i "s|image: panchanandevops/golang-mux-app:.*|image: ${{ steps.meta.outputs.tags }}|g" Deploy/k8s/5-api-deployment.yaml
+          sed -i "s|image: panchanandevops/golang-mux-app:.*|image: ${{ steps.meta.outputs.tags }}|g" Deploy/k8s/manifests/5-api-deployment.yaml
           sed -i "s|image: panchanandevops/golang-mux-app:.*|image: ${{ steps.meta.outputs.tags }}|g" Deploy/kustomize/base/5-api-deployment.yaml
           sed -i "s|image: panchanandevops/golang-mux-app:.*|image: ${{ steps.meta.outputs.tags }}|g" Deploy/go-helm-chart/values.yaml
 
       - name: Commit changes
         run: |
-          git add Deploy/k8s/5-api-deployment.yaml Deploy/kustomize/base/5-api-deployment.yaml Deploy/go-helm-chart/values.yaml trivy-results.sarif 
+          git add Deploy/k8s/manifests/5-api-deployment.yaml Deploy/kustomize/base/5-api-deployment.yaml Deploy/go-helm-chart/values.yaml trivy-results.sarif 
           git commit -m "Update tag in Deployment image tag and add Trivy scan results"
 
       - name: Create Pull Request
