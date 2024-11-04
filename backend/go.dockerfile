@@ -11,12 +11,12 @@ RUN --mount=type=cache,target=/go/pkg/mod \
   go mod download
 
 
-  FROM build-base AS build-production
+FROM build-base AS build-production
 
-  # Add non root user
-  RUN useradd -u 1001 nonroot
+# Add non root user
+RUN useradd -u 1001 nonroot
   
-  COPY . .
+COPY . .
 
 
 # Compile application during build rather than at runtime
