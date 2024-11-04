@@ -184,13 +184,13 @@
         }
       },
       "properties": {
-        "imageID": "sha256:134333e00d1b04481cf6cde7b344b8a213d8bac710169da2ffdaf155028a2637",
-        "imageName": "panchanandevops/golang-mux-app:2.0.6",
+        "imageID": "sha256:8b60cb0157c79afbb04458d055c5c4d5150889fed080bc54d69aec9c89f7d051",
+        "imageName": "panchanandevops/golang-mux-app:2.0.7",
         "repoDigests": [
-          "panchanandevops/golang-mux-app@sha256:595a5afd78be17eb26608bba9d11219ea59194827a3d3c4b38d9080c18b7c955"
+          "panchanandevops/golang-mux-app@sha256:bc9cdf52df8ef363b9559ba9cb7bcc4faedd8cbb5351875cd682a6d32105d003"
         ],
         "repoTags": [
-          "panchanandevops/golang-mux-app:2.0.6"
+          "panchanandevops/golang-mux-app:2.0.7"
         ]
       }
     }
