@@ -36,8 +36,8 @@ WORKDIR /
 # Copy the passwd file
 COPY --from=build-production /etc/passwd /etc/passwd
 
-# Copy the app binary from the build stage
-COPY --from=build-production /app/api-golang api-golang
+# Copy the built binary and set ownership to nonroot
+COPY --from=build-production --chown=nonroot /app/api-golang api-golang
 
 # Use nonroot user
 USER nonroot
