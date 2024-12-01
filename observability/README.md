@@ -1,5 +1,8 @@
 
 
+
+
+
 # Golang Observability Stack
 
 This repository sets up a complete observability stack to monitor the **Four Golden Signals**—**Latency**, **Traffic**, **Availability**, and **Saturation**—in your Kubernetes cluster using **Prometheus**, **Loki**, **Promtail**, and **Grafana**. 
