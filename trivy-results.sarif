@@ -91,7 +91,7 @@
               }
             }
           ],
-          "version": "0.56.1"
+          "version": "0.57.1"
         }
       },
       "results": [
@@ -100,7 +100,7 @@
           "ruleIndex": 0,
           "level": "error",
           "message": {
-            "text": "Package: stdlib\nInstalled Version: 1.22.5\nVulnerability CVE-2024-34156\nSeverity: HIGH\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34156](https://avd.aquasec.com/nvd/cve-2024-34156)"
+            "text": "Package: stdlib\nInstalled Version: v1.22.5\nVulnerability CVE-2024-34156\nSeverity: HIGH\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34156](https://avd.aquasec.com/nvd/cve-2024-34156)"
           },
           "locations": [
             {
@@ -117,7 +117,7 @@
                 }
               },
               "message": {
-                "text": "api-golang: stdlib@1.22.5"
+                "text": "api-golang: stdlib@v1.22.5"
               }
             }
           ]
@@ -127,7 +127,7 @@
           "ruleIndex": 1,
           "level": "warning",
           "message": {
-            "text": "Package: stdlib\nInstalled Version: 1.22.5\nVulnerability CVE-2024-34155\nSeverity: MEDIUM\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34155](https://avd.aquasec.com/nvd/cve-2024-34155)"
+            "text": "Package: stdlib\nInstalled Version: v1.22.5\nVulnerability CVE-2024-34155\nSeverity: MEDIUM\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34155](https://avd.aquasec.com/nvd/cve-2024-34155)"
           },
           "locations": [
             {
@@ -144,7 +144,7 @@
                 }
               },
               "message": {
-                "text": "api-golang: stdlib@1.22.5"
+                "text": "api-golang: stdlib@v1.22.5"
               }
             }
           ]
@@ -154,7 +154,7 @@
           "ruleIndex": 2,
           "level": "warning",
           "message": {
-            "text": "Package: stdlib\nInstalled Version: 1.22.5\nVulnerability CVE-2024-34158\nSeverity: MEDIUM\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34158](https://avd.aquasec.com/nvd/cve-2024-34158)"
+            "text": "Package: stdlib\nInstalled Version: v1.22.5\nVulnerability CVE-2024-34158\nSeverity: MEDIUM\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34158](https://avd.aquasec.com/nvd/cve-2024-34158)"
           },
           "locations": [
             {
@@ -171,7 +171,7 @@
                 }
               },
               "message": {
-                "text": "api-golang: stdlib@1.22.5"
+                "text": "api-golang: stdlib@v1.22.5"
               }
             }
           ]
@@ -184,13 +184,13 @@
         }
       },
       "properties": {
-        "imageID": "sha256:8b60cb0157c79afbb04458d055c5c4d5150889fed080bc54d69aec9c89f7d051",
-        "imageName": "panchanandevops/golang-mux-app:2.0.7",
+        "imageID": "sha256:d2e2dfd172387300d6a7bd9da5944c3634f7eff4ac089140335e24465fe4f3e5",
+        "imageName": "panchanandevops/golang-mux-app:3.0.1",
         "repoDigests": [
-          "panchanandevops/golang-mux-app@sha256:bc9cdf52df8ef363b9559ba9cb7bcc4faedd8cbb5351875cd682a6d32105d003"
+          "panchanandevops/golang-mux-app@sha256:8457b8d0ce9b4e801ff4b2dfbed9aedd1a3a9ad0a0d4416e702ce6a6cc417ce9"
         ],
         "repoTags": [
-          "panchanandevops/golang-mux-app:2.0.7"
+          "panchanandevops/golang-mux-app:3.0.1"
         ]
       }
     }

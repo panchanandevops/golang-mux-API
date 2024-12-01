@@ -13,7 +13,7 @@ deployment:
   container:
     name: golang-mux-app
     port: 8000
-    image: panchanandevops/golang-mux-app:2.0.7
+    image: panchanandevops/golang-mux-app:3.0.1
     resources:
       limits:
         memory: "512Mi"
