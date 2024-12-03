@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/panchanandevops/Next-Golang-CRUD-app.git
+    repoURL: https://github.com/panchanandevops/golang-mux-API.git
     targetRevision: main
     path: Deploy/go-helm-chart/ # Path within the Git repository containing application manifests
     helm:
